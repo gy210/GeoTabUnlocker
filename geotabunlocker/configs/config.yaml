@@ -16,7 +16,7 @@ pdf_processing:
 
 
 table_detector:
-  weights_path: '/root/autodl-tmp/code/models/doclayout_yolo/doclayout_yolo_ft.pt'
+  weights_path: '/root/autodl-tmp/code/model/doclayout_yolo/doclayout_yolo_ft.pt'
   imgsz: 1024
   confidence_threshold: 0.4
 
@@ -29,8 +29,8 @@ ocr_extractor:
 tablip:
   pretrained: './model/tablip.pth'
   vit: 'unitable-large'
-  vit_ckpt_path: './models/unitable_weights/ssp_2m_large.pt'
-  bert_ckpt_path: './models/bert-base-uncased'
+  vit_ckpt_path: './model/unitable_weights/ssp_2m_large.pt'
+  bert_ckpt_path: './model/bert-base-uncased'
 
   vit_grad_ckpt: False
   vit_ckpt_layer: 0

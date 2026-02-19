@@ -41,16 +41,14 @@ class TableCL(nn.Module):
 
         for idx in range(B):
             valid_len = input_coords_length[idx] + 1
-            selected_mask = masks[idx][:, :valid_len, :valid_len]  # [1, valid_len, valid_len]
-            assert selected_mask.shape[0] == 1, "?????有什么用?????"
+            selected_mask = masks[idx][:, :valid_len, :valid_len]
 
-            selected_feature = features[idx][:valid_len]  # [valid_len, d_model]
-            selected_feature = selected_feature.unsqueeze(0)  # [1, valid_len, d_model]
+            selected_feature = features[idx][:valid_len]  
+            selected_feature = selected_feature.unsqueeze(0)
 
             batch_loss += self.sup_con_loss(selected_feature, mask=selected_mask)
 
-            # check if the data is valid
-            float_selected_mask = selected_mask[0].to(torch.float)  # [valid_len, valid_len]
+            float_selected_mask = selected_mask[0].to(torch.float)
             sanity_tensor = torch.eye(
                 float_selected_mask.shape[0],
                 dtype=float_selected_mask.dtype,

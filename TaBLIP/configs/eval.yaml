@@ -1,5 +1,5 @@
 aux_json_path: './dataset/PubTabNet/meta_data/final_eval_v2.json'
-aux_img_path: './datasets/PubTabNet/images/test'
+aux_img_path: './dataset/PubTabNet/images/test'
 aux_rec_pkl_path: './dataset/PubTabNet/pse_results/test/end2end_results.pkl'
 
 have_html_tag: False
