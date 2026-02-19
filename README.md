@@ -89,54 +89,6 @@ python geotabunlocker/main.py
 
 ## TaBLIP Training & Evaluation
 
-#### Preparation work 
-
-1. Download dataset
-
-```bash
-# install & login huggingface
-pip install -U "huggingface_hub[cli]"
-huggingface-cli login
-
-# install git-lfs
-sudo apt install git-lfs
-git lfs install
-
-# download dataset
-cd ../TaBLIP
-cd dataset
-git clone https://huggingface.co/datasets/upstage/TFLOP-dataset
-
-# unzip image files
-mv TFLOP-dataset PubTabNet
-cd PubTabNet/images
-tar -xvzf train.tar.gz
-tar -xvzf validation.tar.gz
-tar -xvzf test.tar.gz
-```
-
-2. Download pretrained weights
-
-```bash
-# Ensure the file path is TaBLIP
-cd ../../..
-
-# BERT
-huggingface-cli download google-bert/bert-base-uncased --local-dir ./weights/bert-base-uncased --local-dir-use-symlinks False
-# UniTable
-huggingface-cli download poloclub/UniTable --local-dir ./weights/UniTable --local-dir-use-symlinks False
-```
-
-3. Data preprocessing
-
-```bash
-python ./data/preprocess-data/preprocess_data.py \
-	--data_config_path ./data/preprocess-data/data_config_PTN.json \
-  --output_dir ./dataset/PubTabNet/meta_data
-```
-
-You need to configure the data_config_PTN.json file in advance.
-
 #### Training
 
 1. Multimodal Representation Training
