@@ -12,6 +12,7 @@ This paper introduces an automated method that leverages multimodal representati
 
 ```text
 .
+├── assets/  
 ├── geotabunlocker/  
 │   ├── configs/  
 │   ├── data/
@@ -27,6 +28,7 @@ This paper introduces an automated method that leverages multimodal representati
 ├── TaBLIP/    
 │   ├── configs/  
 │   ├── data/
+│   ├── dataset/
 │   ├── models/  
 │   ├── transform/
 │   ├── eval_tablip.py  
@@ -35,8 +37,8 @@ This paper introduces an automated method that leverages multimodal representati
 │   ├── posttrain_tablip.py 
 │   ├── teds.py  
 │   ├── utils.py 
-├── datasets/
-├── models/
+├── .gitignore
+├── LICENSE
 ├── requirements.txt 
 └── README.md
 ```
