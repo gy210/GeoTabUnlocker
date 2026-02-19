@@ -1,0 +1,55 @@
+# PTN
+image_path: './dataset/PubTabNet/images'
+meta_data_path: './dataset/PubTabNet/meta_data/'
+
+have_html_tag: False
+mode: train
+
+
+# set tablip-pretrained as a file path
+pretrained: './output/tablip_pretrian/checkpoint_xx.pth'
+
+
+vit: 'unitable-large'
+vit_ckpt_path: './weights/Unitable/ssp_2m_large.pt'
+bert_ckpt_path: './weights/bert-base-uncased'
+batch_size_train: 16
+batch_size_test: 8
+
+
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+RandomAugment: False
+
+
+max_length: 384
+bbox_token_cnt: 384
+image_size: 448
+use_OTSL: true
+
+
+weight_loss_lm: 1.0
+weight_loss_bce: 1.0
+weight_loss_pointer: 1.0
+weight_loss_Span: 1.0 
+
+
+# Span-aware Contrastive Supervision
+use_RoiAlign: true
+use_bbox_HiMulConET: true
+use_RowWise_contLearning: true
+use_ColWise_contLearning: true
+span_coeff_mode: 'proportional'
+use_dist: true
+
+best_pointer_acc: 0.0
+
+
+# optimizer
+init_lr: 5e-5
+min_lr: 3e-6
+weight_decay: 5e-2
+warmup_ratio: 0.01
+max_epoch: 8
+eval_epoch: 2
+grad_clip: 5.0    

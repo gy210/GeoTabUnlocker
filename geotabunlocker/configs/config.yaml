@@ -1,0 +1,58 @@
+paths:
+  output_dir: './output/'
+
+device: 'cuda:0'
+
+api_key: ''
+
+excel_path: './excel_data/同位素相关数据表.xlsx'
+csv_dir: './excel_data/csv'
+output_excel_path: './excel_data/output.xlsx'
+human_csv_dir: './excel_data/human_csv'
+human_output_excel_path: './excel_data/human_output.xlsx'
+
+pdf_processing:
+  dpi: 300
+
+
+table_detector:
+  weights_path: '/root/autodl-tmp/code/models/doclayout_yolo/doclayout_yolo_ft.pt'
+  imgsz: 1024
+  confidence_threshold: 0.4
+
+
+ocr_extractor:
+  lang: 'ch'
+  use_textline_orientation: False
+  batch_size: 4
+
+tablip:
+  pretrained: './model/tablip.pth'
+  vit: 'unitable-large'
+  vit_ckpt_path: './models/unitable_weights/ssp_2m_large.pt'
+  bert_ckpt_path: './models/bert-base-uncased'
+
+  vit_grad_ckpt: False
+  vit_ckpt_layer: 0
+
+  batch_size: 2
+  max_length: 512
+  bbox_token_cnt: 512
+  image_size: 448
+  use_OTSL: true
+  use_RoiAlign: true
+
+  num_beams: 1
+
+
+data_fill:
+  map_database: './data/map_database.json'
+  heuristic:
+    weights:
+      lev: 0.3
+      jac: 0.3 
+      cos: 0.4
+    similarity_threshold: 0.7
+  llm:
+    max_retry: 1
+    llm_model: 'glm-4-plus'

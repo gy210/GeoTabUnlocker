@@ -1,0 +1,24 @@
+aux_json_path: './dataset/PubTabNet/meta_data/final_eval_v2.json'
+aux_img_path: './datasets/PubTabNet/images/test'
+aux_rec_pkl_path: './dataset/PubTabNet/pse_results/test/end2end_results.pkl'
+
+have_html_tag: False
+
+pretrained: './output/tablip_posttrian/checkpoint_xx.pth'
+
+vit: 'unitable-large'
+vit_ckpt_path: './weights/Unitable/ssp_2m_large.pt'
+bert_ckpt_path: './weights/bert-base-uncased'
+batch_size: 4
+num_worker: 4
+
+
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+RandomAugment: False
+use_RoiAlign: true
+
+max_length: 512
+bbox_token_cnt: 512
+image_size: 448
+use_OTSL: true
