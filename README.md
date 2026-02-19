@@ -1,6 +1,6 @@
 # Geochemical Literature Table Data Extraction via Multimodal and Large Language Model
 
-This paper proposes a method for automatic extraction of table data from geochemical literature and database construction by integrating multimodal representation learning with Large Language Model (LLM).
+This paper introduces an automated method that leverages multimodal representation learning and Large Language Models (LLMs) to extract table data from geochemical literature and facilitate subsequent database construction.
 
 ![image-20260219102102533](./assets/image-20260219102102533.png)
 
